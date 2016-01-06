@@ -44,11 +44,13 @@ Here's a rough overview of the workflow we use in the main class. We'll base the
 rest of this tutorial on these steps. Feel free to add/remove steps as fit for
 your course.
 
-1. Create a notebook.
-2. Upload the notebook.
-3. Distribute the notebook to students.
-4. Students work on notebooks.
-5. Students submit their completed notebooks to you.
+Click a link to jump to that section of this guide.
+
+1. [Create a notebook.](#creating-notebooks)
+2. [Upload the notebook.](#uploading-your-notebooks)
+3. [Distribute the notebook to students.](#distributing-notebooks)
+4. [Students work on notebooks.](#student-work)
+5. [Students submit their completed notebooks to you.](#student-submission)
 
 [dsten]: https://github.com/dsten
 [interact]: http://data8.org/text/1_data.html#example-plotting-the-classics
