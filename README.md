@@ -167,6 +167,14 @@ fill in notebook cells with their answers to questions.
 
 ### Student submission
 
-As of right now we don't have a way for students to submit their work
-programmatically. You can accept submissions through email, bCourses, or
-otherwise.
+Unforunately as of right now we don't have an easy way for students to submit
+their work programmatically. You can accept submissions through email, bCourses,
+or otherwise.
+
+Students are currently able to download their notebooks off their
+ds8.berkeley.edu accounts in multiple formats, including `.pdf`, `.py`, and
+`.ipynb`. They can download a notebook by opening it, turning Edit mode **on**,
+then navigating to File -> Download as -> Format of choice.
+
+Thus, feel free to collect student submissions in a format that makes sense for
+you.
