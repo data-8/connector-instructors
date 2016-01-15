@@ -168,7 +168,7 @@ notebooks.
 Note that the first time a student does this it will be slow and may result in a
 timeout in the browser. However, the student should eventually get the files.
 
-Folders also work too. If you have a folder called `datasets` in the
+Folders work too. If you have a folder called `datasets` in the
 `health-connector` repo, you'd give students:
 
     https://data8.berkeley.edu/hub/interact?repo=health-connector&path=datasets
