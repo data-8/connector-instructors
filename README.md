@@ -30,8 +30,8 @@ If you run into issues or questions with any of these steps, contact Sam or
 Chris with your issue(s). It's our responsibility to make sure you have access
 to the needed websites.
 
-You'll need an account on https://ds8.berkeley.edu/ . You should be able to log
-in to that site with your @berkeley.edu email address.
+You'll need an account on https://data8.berkeley.edu/ . You should be able to
+log in to that site with your @berkeley.edu email address.
 
 You'll also need an account on [Github][github] and the ability to push to the
 Github repo associated with your connector course.
@@ -62,7 +62,7 @@ Let's talk in more detail about each of these steps.
 This guide is intended for those with no prior experience with Jupyter, `git`,
 or Github. Feel free to develop your own workflow if you know what you're doing.
 
-First, visit https://ds8.berkeley.edu/ and log in. You should see a screen that
+First, visit https://data8.berkeley.edu/ and log in. You should see a screen that
 looks something like the one below. Click the "Terminal" button as marked:
 
 ![screenshot 2016-01-05 17 54 11](https://cloud.githubusercontent.com/assets/2468904/12132922/70ea3a22-b3d5-11e5-983a-6cd2aae3b10f.png)
@@ -83,7 +83,7 @@ the instructor for the Health connector, you'd write:
     git clone https://github.com/dsten/health-connector
 
 After this step, you should be able to see your connector's folder at
-https://ds8.berkeley.edu/ . Click on that folder to go inside that directory.
+https://data8.berkeley.edu/ . Click on that folder to go inside that directory.
 
 ![screenshot 2016-01-05 18 02 28](https://cloud.githubusercontent.com/assets/2468904/12133071/a1a3be9e-b3d6-11e5-9efa-74cffcaba1e0.png)
 
@@ -108,13 +108,13 @@ projects.
 Once your notebook is ready for distribution, you must to upload it to Github so
 that it can publicly accessed online.
 
-For those who are familiar with `git` and Github, push your file to the `gh-pages`
-of your repo. The file should then be available at
+For those who are familiar with `git` and Github, push your file to the
+`gh-pages` of your repo. The file should then be available at
 `http://data8.org/<repo_name>/<file_name>`.
 
 If you are not familiar with `git`/Github, follow the instructions below.
 
-1. On ds8.berkeley.edu, open a new terminal. (New -> Terminal)
+1. On data8.berkeley.edu, open a new terminal. (New -> Terminal)
 2. Type in
 
         cd <repo_name>
@@ -145,19 +145,39 @@ on a persisting issue.
 
 ### Distributing notebooks
 
-Once your notebook is uploaded to Github, you can generate links that work like
-the Interact buttons in the textbook.
+Once your notebook is uploaded to Github, you can give your students links that
+work like the Interact buttons in the textbook.
 
-To do so, take the link you used in Step 5 in the previous section and add
-`https://ds8.berkeley.edu/hub/interact?file=` to the front. For example, if you
-have a working link of http://data8.org/health-connector/Demo2.ipynb, the link
-you'd give students is:
+Create a link like the following:
 
-https://ds8.berkeley.edu/hub/interact?file=http://data8.org/health-connector/Demo2.ipynb
+    https://data8.berkeley.edu/hub/interact?repo=<repo_name>&path=<path_name>
 
-Any student that visits this link will end up with their own copy of the file in
-their ds8.berkeley.edu account. You can repeat this for any file, not just
+Where the `<repo_name>` is replaced with your repo name and `<path_name>` is
+replaced with the path to a file or folder in the repo.
+
+For example, if you have a working link of
+http://data8.org/health-connector/Demo2.ipynb, the link you'd give students is:
+
+    https://data8.berkeley.edu/hub/interact?repo=health-connector&path=Demo2.ipynb
+
+Any student that visits this link will end up with their own copy of the
+`Demo2.ipynb` file in a folder called `health-connector` their
+data8.berkeley.edu account. You can repeat this for any file, not just
 notebooks.
+
+Note that the first time a student does this it will be slow and may result in a
+timeout in the browser. However, the student should eventually get the files.
+
+Folders also work too. If you have a folder called `datasets` in the
+`health-connector` repo, you'd give students:
+
+    https://data8.berkeley.edu/hub/interact?repo=health-connector&path=datasets
+
+Updating works as well. If you update a file in the `datasets` folder, students
+can grab the update by visiting the link again. Note that in some cases an
+update would conflict with students' work (eg. updating a notebook that
+students have filled out). In such a case, the system will give up trying to
+update the file in favor of preserving the students' work.
 
 ### Student work
 
@@ -172,7 +192,7 @@ their work programmatically. You can accept submissions through email, bCourses,
 or otherwise.
 
 Students are currently able to download their notebooks off their
-ds8.berkeley.edu accounts in multiple formats, including `.pdf`, `.py`, and
+data8.berkeley.edu accounts in multiple formats, including `.pdf`, `.py`, and
 `.ipynb`. They can download a notebook by opening it, turning Edit mode **on**,
 then navigating to File -> Download as -> Format of choice.
 
