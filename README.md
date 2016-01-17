@@ -31,7 +31,11 @@ Chris with your issue(s). It's our responsibility to make sure you have access
 to the needed websites.
 
 You'll need an account on https://data8.berkeley.edu/ . You should be able to
-log in to that site with your @berkeley.edu email address.
+log in to that site with your @berkeley.edu email address. If you run into a:
+
+![screenshot 2016-01-17 10 41 37](https://cloud.githubusercontent.com/assets/2468904/12379069/6dd0cf96-bd07-11e5-9261-18f99528f050.png)
+
+This means that you don't have access yet. Ping either Sam or Chris.
 
 You'll also need an account on [Github][github] and the ability to push to the
 Github repo associated with your connector course.
