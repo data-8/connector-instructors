@@ -7,7 +7,7 @@ are your current points of contact about issues and questions you may have
 as a connector instructor. Email us with questions or [ping us in the chat room]
 [gitter].
 
-[gitter]: https://gitter.im/dsten/datascience
+[gitter]: https://gitter.im/data-8/datascience
 
 ## Who is this for?
 
@@ -19,7 +19,7 @@ optionally the [**`datascience`**][datascience] package in your course, this
 guide is for you.
 
 [ipython]: http://ipython.org/notebook.html
-[datascience]: https://github.com/dsten/datascience
+[datascience]: https://github.com/data-8/datascience
 
 If you do not want to use this infrastructure that's fine by us. We'd be happy
 to help you in whatever capacity we can.
@@ -56,7 +56,7 @@ Click a link to jump to that section of this guide.
 4. [Students work on notebooks.](#student-work)
 5. [Students submit their completed notebooks to you.](#student-submission)
 
-[dsten]: https://github.com/dsten
+[data-8]: https://github.com/data-8
 [interact]: http://data8.org/text/1_data.html#example-plotting-the-classics
 
 Let's talk in more detail about each of these steps.
@@ -78,13 +78,13 @@ You should see a screen that looks like this:
 This is a terminal that allows you to run commands. Type the following into the
 terminal:
 
-    git clone https://github.com/dsten/<repo_name>
+    git clone https://github.com/data-8/<repo_name>
 
 Where the `<repo_name>` is the name of the repository for your connector. The
-repository names are listed at https://github.com/dsten. For example, if you are
-the instructor for the Health connector, you'd write:
+repository names are listed at https://github.com/data-8. For example, if you
+are the instructor for the Health connector, you'd write:
 
-    git clone https://github.com/dsten/health-connector
+    git clone https://github.com/data-8/health-connector
 
 After this step, you should be able to see your connector's folder at
 https://data8.berkeley.edu/ . Click on that folder to go inside that directory.
