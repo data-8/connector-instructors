@@ -40,6 +40,10 @@ This means that you don't have access yet. Ping either Sam or Chris.
 You'll also need an account on [Github][github] and the ability to push to the
 Github repo associated with your connector course.
 
+[Github][github] is a website that hosts code and files. A repository on Github
+holds the files for a specific project. Each connector class has a repository.
+If you don't know what your repository is, contact Sam.
+
 [github]: https://github.com/
 
 ## Workflow
@@ -63,8 +67,11 @@ Let's talk in more detail about each of these steps.
 
 ### Creating notebooks
 
-This guide is intended for those with no prior experience with Jupyter, `git`,
-or Github. Feel free to develop your own workflow if you know what you're doing.
+This guide is intended for those with **no prior experience** with Jupyter,
+`git`, or Github. Feel free to develop your own workflow if you know what you're
+doing.
+
+#### Setting up your repo
 
 First, visit https://data8.berkeley.edu/ and log in. You should see a screen that
 looks something like the one below. Click the "Terminal" button as marked:
@@ -86,8 +93,13 @@ are the instructor for the Health connector, you'd write:
 
     git clone https://github.com/data-8/health-connector
 
+#### Adding your content
+
 After this step, you should be able to see your connector's folder at
-https://data8.berkeley.edu/ . Click on that folder to go inside that directory.
+https://data8.berkeley.edu/ . **Once your folder is there, you do not have to
+repeat the steps in the Setting up your repo section.**
+
+Click on your folder to go inside that directory.
 
 ![screenshot 2016-01-05 18 02 28](https://cloud.githubusercontent.com/assets/2468904/12133071/a1a3be9e-b3d6-11e5-9efa-74cffcaba1e0.png)
 
@@ -104,6 +116,11 @@ the [table demos][demos] or click any of the Interact buttons in [the
 textbook][textbook]. The main class uses notebooks for lectures, labs, and
 projects.
 
+**Adding datasets:** If you have datasets/other needed files to distribute or
+use in a notebook, you can upload them using the button as labeled below:
+
+![screenshot 2016-01-19 22 15 32](https://cloud.githubusercontent.com/assets/2468904/12441280/429ce95a-befa-11e5-8e61-869452920490.png)
+
 [demos]: https://github.com/deculler/TableDemos
 [textbook]: http://data8.org/text/
 
@@ -112,8 +129,8 @@ projects.
 Once your notebook is ready for distribution, you must to upload it to Github so
 that it can publicly accessed online.
 
-For those who are familiar with `git` and Github, push your file to the
-`gh-pages` of your repo. The file should then be available at
+For those who are familiar with `git` and Github, push your file(s) to the
+`gh-pages` of your repo. The file(s) should then be available at
 `http://data8.org/<repo_name>/<file_name>`.
 
 If you are not familiar with `git`/Github, follow the instructions below.
@@ -136,8 +153,14 @@ If you are not familiar with `git`/Github, follow the instructions below.
 4. Type the following commands:
 
         git add -A
-        git commit -m 'Update' # Feel free to make the message more descriptive
+        git commit -m 'Update'
         git push origin gh-pages
+
+    If you run into something that looks like:
+
+        ERROR: Permission to data-8/some-connector.git denied
+
+    Contact Sam. This means that you don't have the right access to Github.
 
 5. Verify that you can access your file by visiting
 `http://data8.org/<repo_name>/<file_name>`. For example, for the `Demo2.ipynb`
@@ -172,22 +195,43 @@ notebooks.
 Note that the first time a student does this it will be slow and may result in a
 timeout in the browser. However, the student should eventually get the files.
 
-Folders work too. If you have a folder called `datasets` in the
+**Folders work too.** If you have a folder called `datasets` in the
 `health-connector` repo, you'd give students:
 
     https://data8.berkeley.edu/hub/interact?repo=health-connector&path=datasets
 
-Updating works as well. If you update a file in the `datasets` folder, students
-can grab the update by visiting the link again. Note that in some cases an
-update would conflict with students' work (eg. updating a notebook that
-students have filled out). In such a case, the system will give up trying to
-update the file in favor of preserving the students' work.
+**Updating files:** If you update a file, students can grab the update by
+visiting the original link again.
+
+Note that in some cases an update would conflict with students' work (eg.
+updating a notebook that students have filled out). In such a case, the system
+will give up trying to update the file in favor of preserving the students'
+work.
 
 ### Student work
 
-If you choose to use notebooks as assignments, students can then work on their
-local copies of the notebook. For example, in the main class we have students
-fill in notebook cells with their answers to questions.
+You can use notebooks as a supplement to a lecture. For example, [here's a cool
+notebook about probability][prob-nb]. Here's [a notebook we use to explore
+literature][books-nb] in the [first chapter of the textbook][ch1].
+
+[prob-nb]: http://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb
+[books-nb]: https://github.com/data-8/textbook/blob/gh-pages/notebooks/Books.ipynb
+[ch1]: https://ds8.gitbooks.io/textbook/content/chapter1/example-plotting-the-classics.html
+
+You can also use notebooks as assignments (the Data 8 class does both). You can
+check out [the notebook we use for Lab 1 for Data 8][lab1] as an example of
+this.
+
+[lab1]: https://github.com/data-8/data8assets/blob/master/labs/lab01/lab01.ipynb
+
+As you can see from the lab, we have cells that the students fill in. You can
+make notebooks like this as well and distribute them to students in the same way
+as detailed above.
+
+In that example above, we give Data 8 students this link to get the lab (and its
+related files):
+
+    https://data8.berkeley.edu/hub/interact?repo=data8assets&path=labs/lab01
 
 ### Student submission
 
@@ -200,8 +244,10 @@ data8.berkeley.edu accounts in multiple formats, including `.pdf`, `.py`, and
 `.ipynb`. They can download a notebook by opening it, turning Edit mode **on**,
 then navigating to File -> Download as -> Format of choice.
 
-Thus, feel free to collect student submissions in a format that makes sense for
-you.
+An easy way to collect work is for students to export a notebook as a PDF file
+and then submit to bCourses. We have autograding for Data 8 but it requires set
+up. Let us know if you'd like to learn how to set that up.
 
-## Old course materials
-See [here](http://data8.org/fa15/) for the set of materials from Fall 2015. It contains links to topics covered, sample notebooks, homeworks, etc. 
+## Fall 2015 Course Materials
+See http://data8.org/fa15/ for the set of materials from Fall 2015. It contains
+links to topics covered, sample notebooks, homeworks, etc.
