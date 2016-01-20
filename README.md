@@ -202,3 +202,6 @@ then navigating to File -> Download as -> Format of choice.
 
 Thus, feel free to collect student submissions in a format that makes sense for
 you.
+
+## Old course materials
+See [here](http://data8.org/fa15/) for the set of materials from Fall 2015. It contains links to topics covered, sample notebooks, homeworks, etc. 
