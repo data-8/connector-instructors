@@ -65,7 +65,7 @@ Click a link to jump to that section of this guide.
 
 Here's a diagram of the steps.
 
-![connector-instructor](https://cloud.githubusercontent.com/assets/2468904/12473880/205bfc92-bfcb-11e5-9602-8325fdf4e666.png)
+![connector-instructor](https://cloud.githubusercontent.com/assets/2468904/12474089/f8ac3700-bfcc-11e5-988a-5f686788c4fc.png)
 
 Let's talk in more detail about each of these steps.
 
@@ -180,7 +180,7 @@ on a persisting issue.
 
 ### Distributing notebooks
 
-![step3](https://cloud.githubusercontent.com/assets/2468904/12474030/6d19c18a-bfcc-11e5-8f90-5d9a93ab459e.png)
+![step3](https://cloud.githubusercontent.com/assets/2468904/12474090/f9d45bb2-bfcc-11e5-8884-1ec12945f828.png)
 
 Once your notebook is uploaded to Github, you can give your students links that
 work like the Interact buttons in the textbook.
