@@ -55,7 +55,7 @@ your course.
 Click a link to jump to that section of this guide.
 
 1. [Create a notebook.](#creating-notebooks)
-2. [Upload the notebook.](#uploading-your-notebooks)
+2. [Push the notebook to Github.](#pushing-your-notebooks-to-github)
 3. [Distribute the notebook to students.](#distributing-notebooks)
 4. [Students work on notebooks.](#student-work)
 5. [Students submit their completed notebooks to you.](#student-submission)
@@ -124,7 +124,7 @@ use in a notebook, you can upload them using the button as labeled below:
 [demos]: https://github.com/deculler/TableDemos
 [textbook]: http://data8.org/text/
 
-### Uploading your notebooks
+### Pushing your notebooks to Github
 
 Once your notebook is ready for distribution, you must to upload it to Github so
 that it can publicly accessed online.
@@ -192,21 +192,22 @@ Any student that visits this link will end up with their own copy of the
 data8.berkeley.edu account. You can repeat this for any file, not just
 notebooks.
 
-Note that the first time a student does this it will be slow and may result in a
-timeout in the browser. However, the student should eventually get the files.
-
-**Folders work too.** If you have a folder called `datasets` in the
-`health-connector` repo, you'd give students:
+**I want to push a folder of content to students.** You can! If you have a
+folder called `datasets` in the `health-connector` repo, you'd give students:
 
     https://data8.berkeley.edu/hub/interact?repo=health-connector&path=datasets
 
-**Updating files:** If you update a file, students can grab the update by
-visiting the original link again.
+**I made a typo and want students to get an updated version.** Sure! If you
+update a file, students can grab the update by visiting the original link again.
 
 Note that in some cases an update would conflict with students' work (eg.
 updating a notebook that students have filled out). In such a case, the system
 will give up trying to update the file in favor of preserving the students'
 work.
+
+**A student messed up his work. Can he/she start over?** Certainly. Have the
+student delete or rename the bad file/folder, then visit the link again. The
+original file/folder will appear good as new!
 
 ### Student work
 
