@@ -63,9 +63,15 @@ Click a link to jump to that section of this guide.
 [data-8]: https://github.com/data-8
 [interact]: http://data8.org/text/1_data.html#example-plotting-the-classics
 
+Here's a diagram of the steps.
+
+![connector-instructor](https://cloud.githubusercontent.com/assets/2468904/12473880/205bfc92-bfcb-11e5-9602-8325fdf4e666.png)
+
 Let's talk in more detail about each of these steps.
 
 ### Creating notebooks
+
+![step1](https://cloud.githubusercontent.com/assets/2468904/12474029/6d17c1be-bfcc-11e5-80f8-fbc7ff25aa57.png)
 
 This guide is intended for those with **no prior experience** with Jupyter,
 `git`, or Github. Feel free to develop your own workflow if you know what you're
@@ -126,6 +132,8 @@ use in a notebook, you can upload them using the button as labeled below:
 
 ### Pushing your notebooks to Github
 
+![step2](https://cloud.githubusercontent.com/assets/2468904/12474031/6d1a12e8-bfcc-11e5-83e4-e2dc5b420e6b.png)
+
 Once your notebook is ready for distribution, you must to upload it to Github so
 that it can publicly accessed online.
 
@@ -172,6 +180,8 @@ on a persisting issue.
 
 ### Distributing notebooks
 
+![step3](https://cloud.githubusercontent.com/assets/2468904/12474030/6d19c18a-bfcc-11e5-8f90-5d9a93ab459e.png)
+
 Once your notebook is uploaded to Github, you can give your students links that
 work like the Interact buttons in the textbook.
 
@@ -211,6 +221,8 @@ original file/folder will appear good as new!
 
 ### Student work
 
+![step4](https://cloud.githubusercontent.com/assets/2468904/12474033/6d1d97ce-bfcc-11e5-8fb5-373c31c034b2.png)
+
 You can use notebooks as a supplement to a lecture. For example, [here's a cool
 notebook about probability][prob-nb]. Here's [a notebook we use to explore
 literature][books-nb] in the [first chapter of the textbook][ch1].
@@ -235,6 +247,8 @@ related files):
     https://data8.berkeley.edu/hub/interact?repo=data8assets&path=labs/lab01
 
 ### Student submission
+
+![step5](https://cloud.githubusercontent.com/assets/2468904/12474032/6d1a431c-bfcc-11e5-9944-e150c2277eef.png)
 
 Unforunately as of right now we don't have an easy way for students to submit
 their work programmatically. You can accept submissions through email, bCourses,
