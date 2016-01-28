@@ -2,10 +2,10 @@
 
 ## Points of contact
 
-**Sam Lau** (samlau95@gmail.com) and **Chris Holdgraf** (choldgraf@berkeley.edu)
-are your current points of contact about issues and questions you may have
-as a connector instructor. Email us with questions or [ping us in the chat room]
-[gitter].
+**Sam Lau** (samlau95@gmail.com), **Chris Holdgraf** (choldgraf@berkeley.edu),
+and **Elaine Angelino** (elaine@berkeley.edu) are your current points of contact
+about issues and questions you may have as a connector instructor. Email us with
+questions or [ping us in the chat room][gitter].
 
 [gitter]: https://gitter.im/data-8/datascience
 
