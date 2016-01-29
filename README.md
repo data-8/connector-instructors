@@ -276,7 +276,7 @@ up. Let us know if you'd like to learn how to set that up.
 
 > When we do update the single user server with new software, it requires that students stop and start their server.
 
-**Q: Where can I find some example notebooks?
+**Q: Where can I find some example notebooks?**
     
 >A: **Example notebooks:** For examples of notebooks, you can see the [table demos][demos] or click any of the Interact buttons in [the textbook][textbook]. The main class uses notebooks for lectures, labs, and projects.
 
