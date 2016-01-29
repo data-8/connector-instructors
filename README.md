@@ -117,7 +117,9 @@ not `~/some_other_folder`.
 
 ![screenshot 2016-01-05 18 04 33](https://cloud.githubusercontent.com/assets/2468904/12133094/d7786e98-b3d6-11e5-8118-3a82bec33492.png)
 
-Fill in the notebook with your content. For examples of notebooks, you can see
+Fill in the notebook with your content.
+
+**Example notebooks:** For examples of notebooks, you can see
 the [table demos][demos] or click any of the Interact buttons in [the
 textbook][textbook]. The main class uses notebooks for lectures, labs, and
 projects.
