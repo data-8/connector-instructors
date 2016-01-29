@@ -120,9 +120,8 @@ not `~/some_other_folder`.
 Fill in the notebook with your content.
 
 **Example notebooks:** For examples of notebooks, you can see
-the [table demos][demos] or click any of the Interact buttons in [the
-textbook][textbook]. The main class uses notebooks for lectures, labs, and
-projects.
+the [table demos][demos] or find all raw notebooks for the textbook [here](https://github.com/data-8/textbook/tree/gh-pages/notebooks).The main class uses notebooks for lectures, labs, and
+projects. In addition,
 
 **Adding datasets:** If you have datasets/other needed files to distribute or
 use in a notebook, you can upload them using the button as labeled below:
@@ -278,7 +277,8 @@ up. Let us know if you'd like to learn how to set that up.
 
 **Q: Where can I find some example notebooks?**
     
->A: **Example notebooks:** For examples of notebooks, you can see the [table demos][demos] or click any of the Interact buttons in [the textbook][textbook]. The main class uses notebooks for lectures, labs, and projects.
+>A: **Example notebooks:** For examples of notebooks, you can see
+the [table demos][demos] or find all raw notebooks for the textbook [here](https://github.com/data-8/textbook/tree/gh-pages/notebooks). The main class uses notebooks for lectures, labs, and projects.
 
 **Q: How can I more closely follow the class material?**
     
