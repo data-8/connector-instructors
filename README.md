@@ -186,7 +186,9 @@ on a persisting issue.
 Once your notebook is uploaded to Github, you can give your students links that
 work like the Interact buttons in the textbook.
 
-Create a link like the following:
+**Automatically creating a link** can be done with [this jupyter notebook](http://mybinder.org/repo/choldgraf/connector-instructors/ntbk/url_to_interact.ipynb). This will open a mini python session along with a function we've written to make creating interact links easy.
+
+Alternatively, manually create a link like the following:
 
     https://data8.berkeley.edu/hub/interact?repo=<repo_name>&path=<path_name>
 
