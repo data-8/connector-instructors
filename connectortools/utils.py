@@ -1,6 +1,7 @@
 """Miscellaneous utility and IO functions."""
 import os
 import os.path as op
+import numpy as np
 from mne.utils import _fetch_file
 from subprocess import check_output
 from zipfile import ZipFile
@@ -133,3 +134,31 @@ def install_package(name=None, url=None, update=True, userdir=True):
     s = check_output(s.split(' '))
     s = s.decode('utf-8')
     print("Finished installing. Don't forget to restart the kernel!")
+
+
+def group_students(n_students, n_per_group=2):
+    """Create random pairs of indices for student groups.
+
+    Parameters
+    ----------
+    n_students : int
+        The number of students in the class
+    n_per_group : int
+        The number of students per group. If the number of students doesn't
+        evenly split into groups, then a few groups will have an extra student.
+    """
+    # Shuffle indices
+    ixs = np.arange(1, n_students + 1, 1)
+    ixs_shuffled = np.random.permutation(ixs)
+    remainder = n_students % n_per_group
+
+    # Split so we can easily group
+    extra = ixs_shuffled[:remainder]
+    ixs_shuffled = ixs_shuffled[remainder:]
+
+    # Now do the grouping and add the extras
+    groups = ixs_shuffled.reshape([-1, n_per_group])
+    groups = [list(grp) for grp in groups]
+    for ii, ex in enumerate(extra):
+        groups[ii].append(ex)
+    return groups
