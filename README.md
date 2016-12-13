@@ -2,8 +2,10 @@
 This repository contains three main things:
 
 1. A python module, called `connectortools` that has some useful functions for using Jupyter Notebooks and JupyterHub in your classes. This is in the `connectortools` folder and can be installed with the `setup.py` script.
-2. A collection of examples detailed in the `examples` folder. 
-3. A collection of information for teaching data8 connector courses. This is currently in this `README.md` file as well as in the `guide` folder (all can be viewed on Github.com)
+2. A collection of examples for how to use `connectortools`, these are notebooks in the `examples` folder. 
+3. A README with info for teaching data8 connector courses. This is currently in this `README.md` file as well as in the `guide` folder (all can be viewed on Github.com)
+4. A folder (`tutorials`) with general tutorials that cover topics in programming, computation, etc. Connector instructors may find these useful in teaching basic concepts.
+
 
 ## Points of contact
 
@@ -21,9 +23,9 @@ This repository contains three main things:
 These guides are intended for connector instructors interested in creating
 material that utilizes the same infrastructure as the main course.
 
-Specifically, if you would like to use [**IPython notebooks**][ipython] and
+Specifically, if you would like to use [**Jupyter notebooks**][ipython] and
 optionally the [**`datascience`**][datascience] package in your course, this
-guide is for you.
+guide is for you. Follow the links above to find this information.
 
 [ipython]: http://ipython.org/notebook.html
 [datascience]: https://github.com/data-8/datascience
