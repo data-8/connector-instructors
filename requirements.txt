@@ -2,3 +2,4 @@ setuptools
 pandas
 nbformat
 numpy
+mne
