@@ -6,6 +6,10 @@ This repository contains three main things:
 3. A README with info for teaching data8 connector courses. This is currently in this `README.md` file as well as in the `guide` folder (all can be viewed on Github.com)
 4. A folder (`tutorials`) with general tutorials that cover topics in programming, computation, etc. Connector instructors may find these useful in teaching basic concepts.
 
+# Interactive notebooks
+If you're interested in running the tutorials or examples for the `connectortools` module, click the image below to enter an interactive browsing session.
+
+[![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/data-8/connector-instructors)
 
 ## Points of contact
 

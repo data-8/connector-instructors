@@ -1,4 +1,4 @@
 setuptools
-mne
+pandas
 nbformat
 numpy
