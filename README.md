@@ -3,8 +3,14 @@ This repository contains three main things:
 
 1. A python module, called `connectortools` that has some useful functions for using Jupyter Notebooks and JupyterHub in your classes. This is in the `connectortools` folder and can be installed with the `setup.py` script.
 2. A collection of examples for how to use `connectortools`, these are notebooks in the `examples` folder. 
-3. A README with info for teaching data8 connector courses. This is currently in this `README.md` file as well as in the `guide` folder (all can be viewed on Github.com)
+3. A collection of information for teaching data8 connector courses. This is currently in this `README.md` file as well as in the `guide` folder (all can be viewed on Github.com)
 4. A folder (`tutorials`) with general tutorials that cover topics in programming, computation, etc. Connector instructors may find these useful in teaching basic concepts.
+
+## Quick Links
+
+* [Workflow](guide/workflow.md) describes how to create, distribute, and collect class materials with jupyterhub
+* [FAQ](guide/faq.md) contains commonly-asked questions from connector instructors.
+* [Resources](guide/resources.md) has information about computational resources in data8
 
 # Interactive notebooks
 If you're interested in running the tutorials or examples for the `connectortools` module, click the image below to enter an interactive browsing session.
@@ -16,11 +22,6 @@ If you're interested in running the tutorials or examples for the `connectortool
 **Sam Lau** (samlau95@gmail.com) and **Chris Holdgraf** (choldgraf@berkeley.edu) are your current points of contact about issues and questions you may have as a connector instructor. Email us with questions or [ping us on slack][slack].
 
 [slack]: https://data8-connectors.slack.com/messages/general/
-
-## Quick Links
-
-* [Workflow](guide/workflow.md) describes how to create, distribute, and collect class materials with jupyterhub
-* [FAQ](guide/faq.md) contains commonly-asked questions from connector instructors.
 
 ## Who is this for?
 
