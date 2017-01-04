@@ -37,4 +37,4 @@ ehthumbs.db
 Thumbs.db
 
 # Python
-.pyc
+*.pyc

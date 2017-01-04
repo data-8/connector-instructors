@@ -3,7 +3,10 @@ import nbformat as nbf
 import os
 from copy import deepcopy
 from nbformat.notebooknode import NotebookNode
-from nbconvert.preprocessors import ClearOutputPreprocessor
+from nbgrader.preprocessors import (ClearOutput,
+                                    ClearSolutions,
+                                    NbGraderPreprocessor)
+from traitlets import Unicode
 
 
 def _check_nb_file(ntbk):
@@ -23,33 +26,41 @@ class NotebookCleaner(object):
     """
     def __init__(self, ntbk):
         self.ntbk = _check_nb_file(ntbk)
+        self.preprocessors = []
+
+    def __repr__(self):
+        s = "Number of preprocessors: {}\n---".format(
+            len(self.preprocessors))
+        for pre in self.preprocessors:
+            s += '\n' + str(pre)
+        return s
 
     def clear_outputs(self):
         """Clear the outputs of a notebook.
         """
-        self.ntbk = ClearOutputPreprocessor().preprocess(self.ntbk, {})[0]
+        pre = ClearOutput()
+        self.ntbk = pre.preprocess(self.ntbk, {})[0]
+        self.preprocessors.append(pre)
         return self
 
-    def remove_cells(self, match_string='### TEACHER INFO'):
+    def remove_cells(self, match_text='### TEACHER INFO'):
         """Remove cells that contain a specific string.
 
         Parameters
         ----------
-        match_string : str
+        match_text : str
             A string to search for in input cells. Any cells with the
-            `match_string` inside will be removed.
+            `match_text` inside will be removed.
         """
         # See if the cell matches the string
-        new_cells = []
-        for ii, cell in enumerate(self.ntbk['cells']):
-            # If it doesn't match the string, then keep the cell
-            if cell['source'].find(match_string) == -1:
-                new_cells.append(cell)
-        self.ntbk['cells'] = new_cells
+        pre = RemoveCells(match_text=match_text)
+        self.ntbk = pre.preprocess(self.ntbk, {})[0]
+        self.preprocessors.append(pre)
         return self
 
-    def create_answer_cells(self, match_string='### STUDENT ANSWER',
-                            text_cell=False, md_cell_text=None):
+    def create_answer_cells(self, text_solution_begin='### SOLUTION BEGIN',
+                            text_solution_end='### SOLUTION END',
+                            text_code=None, text_md=None):
         """Create answer cells for students to fill out.
 
         This will remove all text after `match_string`. Students should then give
@@ -58,41 +69,31 @@ class NotebookCleaner(object):
 
         Parameters
         ----------
-        match_string : str
+        text_solution_begin : str
             A string to search for in input cells. If the string is
-            found, then anything in the cell AFTER the string is removed.
-        text_cell : bool
-            Whether to treat this cell as a text cell rather than a code cell.
-            If True, a new markdown cell will be created. This is
-            useful if you want students to add an answer to the MD cell so that
-            text isn't cut off after saving.
-        md_cell_text : str | None
-            Text to add to the added MD cell. If `None`, a template will be used.
+            found, then anything between it and `text_solution_end` is removed.
+        text_solution_end : str
+            The ending delimiter for solution cells.
+        text_code : str | None
+            Text to add to code solution cells. If None, `nbgrader`
+            default is used.
+        text_md : str | None
+            Text to add to markdown solution cells. If None, a default template
+            will be used.
         """
-        new_cells = []
-        for ii, cell in enumerate(self.ntbk['cells']):
-            # Only check code cells
-            if cell['cell_type'] != 'code':
-                new_cells.append(cell)
-                continue
-
-            # See if the cell matches the string
-            ix = cell['source'].find(match_string)
-            if ix != -1:
-                if text_cell is True:
-                    if md_cell_text is None:
-                        md_cell_text = ('---\n## Student Answer\n\n*Double-click'
-                                        ' and add your answer here*\n\n---')
-                    cell = NotebookNode(cell_type='markdown',
-                                        metadata={},
-                                        source=md_cell_text)
-                else:
-                    # If so, remove text after the string
-                    newstr = cell['source'][:ix + len(match_string)] + '\n'
-                    cell['source'] = newstr
-            new_cells.append(cell)
-
-        self.ntbk['cells'] = new_cells
+        kwargs = dict(begin_solution_delimeter=dict(python=text_solution_begin),
+                      end_solution_delimeter=dict(python=text_solution_end),
+                      enforce_metadata=False)
+        if text_code is not None:
+            kwargs['code_stub'] = dict(python=text_code)
+        if text_md is None:
+            text_md = ('---\n## <span style="color:red">Student Answer</span>'
+                       '\n\n*Double-click and add your answer between the '
+                       'lines*\n\n---')
+        kwargs['text_stub'] = text_md
+        pre = ClearSolutions(**kwargs)
+        self.ntbk = pre.preprocess(self.ntbk, {})[0]
+        self.preprocessors.append(pre)
         return self
 
     def save(self, path_save):
@@ -108,3 +109,25 @@ class NotebookCleaner(object):
         if not os.path.isdir(dir_save):
             os.makedirs(dir_save)
         nbf.write(self.ntbk, path_save)
+
+
+class RemoveCells(NbGraderPreprocessor):
+
+    match_text = Unicode(
+        "### TEACHER INFO",
+        config=True,
+        help=("A string to search for in cells. Any cells with"
+              "`match_text` inside will be removed.")
+        )
+
+    def preprocess(self, nb, resources):
+        ntbk = deepcopy(nb)
+        new_cells = []
+        for ii, cell in enumerate(ntbk['cells']):
+            # If it doesn't match the string, then keep the cell
+            if cell['source'].find(self.match_text) == -1:
+                new_cells.append(cell)
+        ntbk['cells'] = new_cells
+        return ntbk, resources
+
+
