@@ -1,4 +1,4 @@
-## Workflow
+# Workflow
 
 Here's a rough overview of the workflow we use in the main class. We'll base the
 rest of this tutorial on these steps. Feel free to add/remove steps as fit for
@@ -21,7 +21,7 @@ Here's a diagram of the steps.
 
 Let's talk in more detail about each of these steps.
 
-### Creating notebooks
+# Creating notebooks
 
 ![step1](https://cloud.githubusercontent.com/assets/2468904/12474029/6d17c1be-bfcc-11e5-80f8-fbc7ff25aa57.png)
 
@@ -29,7 +29,7 @@ This guide is intended for those with **no prior experience** with Jupyter,
 `git`, or Github. Feel free to develop your own workflow if you know what you're
 doing.
 
-#### Setting up your repo
+## Setting up your repo
 
 First, visit https://data8.berkeley.edu/ and log in. You should see a screen that
 looks something like the one below. Click the "Terminal" button as marked:
@@ -51,7 +51,7 @@ are the instructor for the Health connector, you'd write:
 
     git clone https://github.com/data-8/health-connector
 
-#### Adding your content
+## Adding your content
 
 After this step, you should be able to see your connector's folder at
 https://data8.berkeley.edu/ . **Once your folder is there, you do not have to
@@ -83,7 +83,7 @@ use in a notebook, you can upload them using the button as labeled below:
 [demos]: https://github.com/deculler/TableDemos
 [textbook]: http://data8.org/text/
 
-### Pushing your notebooks to Github
+## Pushing your notebooks to Github
 
 ![step2](https://cloud.githubusercontent.com/assets/2468904/12474031/6d1a12e8-bfcc-11e5-83e4-e2dc5b420e6b.png)
 
@@ -131,7 +131,7 @@ http://data8.org/health-connector/Demo2.ipynb .
 If the last step doesn't work, double the check the steps above and contact us
 on a persisting issue.
 
-### Distributing notebooks
+# Distributing notebooks
 
 ![step3](https://cloud.githubusercontent.com/assets/2468904/12474090/f9d45bb2-bfcc-11e5-8884-1ec12945f828.png)
 
@@ -174,7 +174,7 @@ work.
 student delete or rename the bad file/folder, then visit the link again. The
 original file/folder will appear good as new!
 
-### Student work
+# Student work
 
 ![step4](https://cloud.githubusercontent.com/assets/2468904/12474033/6d1d97ce-bfcc-11e5-8fb5-373c31c034b2.png)
 
@@ -201,11 +201,11 @@ related files):
 
     https://data8.berkeley.edu/hub/interact?repo=data8assets&path=labs/lab01
 
-### Student submission
+# Student submission
 
 ![step5](https://cloud.githubusercontent.com/assets/2468904/12474032/6d1a431c-bfcc-11e5-9944-e150c2277eef.png)
 
-Unforunately as of right now we don't have an easy way for students to submit
+As of right now we don't have an easy way for students to submit
 their work programmatically. You can accept submissions through email, bCourses,
 or otherwise.
 
