@@ -31,7 +31,7 @@ doing.
 
 ## Setting up your repo
 
-First, visit https://data8.berkeley.edu/ and log in. You should see a screen that
+First, visit https://datahub.berkeley.edu/ and log in. You should see a screen that
 looks something like the one below. Click the "Terminal" button as marked:
 
 ![screenshot 2016-01-05 17 54 11](https://cloud.githubusercontent.com/assets/2468904/12132922/70ea3a22-b3d5-11e5-983a-6cd2aae3b10f.png)
@@ -54,7 +54,7 @@ are the instructor for the Health connector, you'd write:
 ## Adding your content
 
 After this step, you should be able to see your connector's folder at
-https://data8.berkeley.edu/ . **Once your folder is there, you do not have to
+https://datahub.berkeley.edu/ . **Once your folder is there, you do not have to
 repeat the steps in the Setting up your repo section.**
 
 Click on your folder to go inside that directory.
@@ -96,7 +96,7 @@ For those who are familiar with `git` and Github, push your file(s) to the
 
 If you are not familiar with `git`/Github, follow the instructions below.
 
-1. On data8.berkeley.edu, open a new terminal. (New -> Terminal)
+1. On datahub.berkeley.edu, open a new terminal. (New -> Terminal)
 2. Type in
 
         cd <repo_name>
@@ -142,7 +142,7 @@ work like the Interact buttons in the textbook.
 
 Alternatively, manually create a link like the following:
 
-    https://data8.berkeley.edu/hub/interact?repo=<repo_name>&path=<path_name>
+    https://datahub.berkeley.edu/user-redirect/interact?repo=<repo_name>&path=<path_name>
 
 Where the `<repo_name>` is replaced with your repo name and `<path_name>` is
 replaced with the path to a file or folder in the repo.
@@ -150,17 +150,17 @@ replaced with the path to a file or folder in the repo.
 For example, if you have a working link of
 http://data8.org/health-connector/Demo2.ipynb, the link you'd give students is:
 
-    https://data8.berkeley.edu/hub/interact?repo=health-connector&path=Demo2.ipynb
+    https://datahub.berkeley.edu/user-redirect/interact?repo=health-connector&path=Demo2.ipynb
 
 Any student that visits this link will end up with their own copy of the
 `Demo2.ipynb` file in a folder called `health-connector` their
-data8.berkeley.edu account. You can repeat this for any file, not just
+datahub.berkeley.edu account. You can repeat this for any file, not just
 notebooks.
 
 **I want to push a folder of content to students.** You can! If you have a
 folder called `datasets` in the `health-connector` repo, you'd give students:
 
-    https://data8.berkeley.edu/hub/interact?repo=health-connector&path=datasets
+    https://datahub.berkeley.edu/user-redirect/interact?repo=health-connector&path=datasets
 
 **I made a typo and want students to get an updated version.** Sure! If you
 update a file, students can grab the update by visiting the original link again.
@@ -199,7 +199,7 @@ as detailed above.
 In that example above, we give Data 8 students this link to get the lab (and its
 related files):
 
-    https://data8.berkeley.edu/hub/interact?repo=data8assets&path=labs/lab01
+    https://datahub.berkeley.edu/user-redirect/interact?repo=data8assets&path=labs/lab01
 
 # Student submission
 
@@ -210,7 +210,7 @@ their work programmatically. You can accept submissions through email, bCourses,
 or otherwise.
 
 Students are currently able to download their notebooks off their
-data8.berkeley.edu accounts in multiple formats, including `.pdf`, `.py`, and
+datahub.berkeley.edu accounts in multiple formats, including `.pdf`, `.py`, and
 `.ipynb`. They can download a notebook by opening it, turning Edit mode **on**,
 then navigating to File -> Download as -> Format of choice.
 
