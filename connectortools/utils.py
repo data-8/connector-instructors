@@ -5,17 +5,16 @@ import numpy as np
 from mne.utils import _fetch_file
 from subprocess import check_output
 from zipfile import ZipFile
-from imp import reload
 
 
-def url_to_interact(url, url_type='data8'):
+def url_to_interact(url, url_type='datahub', https=False):
     """Create an interact link from a URL in github or data-8.org.
 
     Parameters
     ----------
     url : string
         The URL of the file/folder you want to convert to an interact link.
-    url_type : one of 'ds8' | 'data8'
+    url_type : one of 'datahub' | 'ds8' | 'data8'
         Whether the output URL should be attached to ds8 or data8.
     """
     # First define the repo name
@@ -33,26 +32,11 @@ def url_to_interact(url, url_type='data8'):
     name_split = 'gh-pages/' if 'github.com' in url else repo + '/'
     name = url.split(name_split)[-1]
 
-    url_int = 'https://{2}.berkeley.edu/hub/interact?repo={0}&path={1}'.format(
-        repo, name, url_type)
+    pre = 'https' if https is True else 'http'
+    url_int = '{3}://{2}.berkeley.edu/hub/interact?repo={0}&path={1}'.format(
+        repo, name, url_type, pre)
     print('Your interactive URL is:\n---\n{0}\n---'.format(url_int))
     return url_int
-
-
-def _convert_url_to_downloadable(url):
-    """Convert a url to the proper style depending on its website."""
-
-    if 'drive.google.com' in url:
-        raise ValueError('Google drive links are not currently supported')
-        # For future support of google drive
-        file_id = url.split('d/').split('/')[0]
-        base_url = 'https://drive.google.com/uc?export=download&id='
-        out = '{}{}'.format(base_url, file_id)
-    elif 'www.dropbox.com' in url:
-        out = url.replace('www.dropbox.com', 'dl.dropboxusercontent.com')
-    else:
-        out = url
-    return out
 
 
 def download_file(url, name, root_destination='~/data/', zipfile=False,
@@ -162,3 +146,19 @@ def group_students(n_students, n_per_group=2):
     for ii, ex in enumerate(extra):
         groups[ii].append(ex)
     return groups
+
+
+def _convert_url_to_downloadable(url):
+    """Convert a url to the proper style depending on its website."""
+
+    if 'drive.google.com' in url:
+        raise ValueError('Google drive links are not currently supported')
+        # For future support of google drive
+        file_id = url.split('d/').split('/')[0]
+        base_url = 'https://drive.google.com/uc?export=download&id='
+        out = '{}{}'.format(base_url, file_id)
+    elif 'www.dropbox.com' in url:
+        out = url.replace('www.dropbox.com', 'dl.dropboxusercontent.com')
+    else:
+        out = url
+    return out
