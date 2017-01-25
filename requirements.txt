@@ -1,6 +1,0 @@
-setuptools
-pandas
-nbformat
-numpy
-mne
-nbgrader
