@@ -1,4 +1,8 @@
-This documentation is for a collection of code that aims to be useful for connector instructors. If you have questions about the class, finding students, building your course, etc, check out the wiki [here](https://github.com/data-8/connector-instructors/wiki).
+This documentation is for a collection of code that aims to be useful for connector instructors. 
+
+If you have questions about the class, finding students, building your course, etc, check out the wiki [here](https://github.com/data-8/connector-instructors/wiki).
+
+If you're looking for the github page for the repository, try [here](https://github.com/data-8/connector-instructors).
 
 # Overview
 
