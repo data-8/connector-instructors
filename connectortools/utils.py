@@ -18,21 +18,25 @@ def url_to_interact(url, url_type='datahub', https=False):
         Whether the output URL should be attached to ds8 or data8.
     """
     # First define the repo name
+    url = url.rstrip('//')
     if not any([i in url for i in ['data-8', 'data8.org']]):
         raise ValueError('Provide a URL attached to a data-8 repository')
     if 'github.com' in url:
-        if 'gh-pages' not in url:
-            raise ValueError('url must use the gh-pages branch')
         repo_split = 'data-8/'
     elif 'data8.org' in url:
         repo_split = 'data8.org/'
     else:
         raise ValueError('Provide a URL for github.com or data8.org')
-    repo = url.split(repo_split)[-1].split('/')[0]
-
-    # Now pull file path/name
-    name_split = 'gh-pages/' if 'github.com' in url else repo + '/'
-
+    repo_parts = url.split(repo_split)[-1].split('/')
+    repo = repo_parts[0]
+    if len(repo_parts) == 1:
+        name = '*'
+    else:
+        if 'gh-pages' not in url:
+            raise ValueError('url must use the gh-pages branch')
+        # Now pull file path/name
+        name_split = 'gh-pages/' if 'github.com' in url else repo + '/'
+        name = url.split(name_split)[-1]
     pre = 'https' if https is True else 'http'
     url_int = '{3}://{2}.berkeley.edu/user-redirect/interact?repo={0}&path={1}'.format(
         repo, name, url_type, pre)

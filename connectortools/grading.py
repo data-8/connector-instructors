@@ -62,8 +62,8 @@ class NotebookCleaner(object):
         self.preprocessors.append(pre)
         return self
 
-    def create_answer_cells(self, text_solution_begin='### SOLUTION BEGIN',
-                            text_solution_end='### SOLUTION END',
+    def create_answer_cells(self, text_solution_begin=u'### SOLUTION BEGIN',
+                            text_solution_end=u'### SOLUTION END',
                             text_code=None, text_md=None):
         """Create answer cells for students to fill out.
 
@@ -85,8 +85,8 @@ class NotebookCleaner(object):
             Text to add to markdown solution cells. If None, a default template
             will be used.
         """
-        kwargs = dict(begin_solution_delimeter=dict(python=text_solution_begin),
-                      end_solution_delimeter=dict(python=text_solution_end),
+        kwargs = dict(begin_solution_delimeter=text_solution_begin,
+                      end_solution_delimeter=text_solution_end,
                       enforce_metadata=False)
         if text_code is not None:
             kwargs['code_stub'] = dict(python=text_code)
