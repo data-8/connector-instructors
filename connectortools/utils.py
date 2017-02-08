@@ -162,8 +162,13 @@ def _convert_url_to_downloadable(url):
         file_id = url.split('d/').split('/')[0]
         base_url = 'https://drive.google.com/uc?export=download&id='
         out = '{}{}'.format(base_url, file_id)
-    elif 'www.dropbox.com' in url:
+    elif 'dropbox.com' in url:
+        if 'www' not in url:
+            raise ValueError('If using dropbox, must give a link w/ "www" in it')
         out = url.replace('www.dropbox.com', 'dl.dropboxusercontent.com')
+    elif 'github.com' in url:
+        out = url.replace('github.com', 'raw.githubusercontent.com')
+        out = out.replace('blob/', '')
     else:
         out = url
     return out
