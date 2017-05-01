@@ -10,14 +10,6 @@ import setuptools
 from numpy.distutils.core import setup
 
 version = "0.1"
-with open(os.path.join('connectortools', '__init__.py'), 'r') as fid:
-    for line in (line.strip() for line in fid):
-        if line.startswith('__version__'):
-            version = line.split('=')[1].strip().strip('\'')
-            break
-if version is None:
-    raise RuntimeError('Could not determine version')
-
 
 descr = """Tools to assist data8 connector instructors."""
 

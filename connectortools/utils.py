@@ -73,37 +73,39 @@ def download_file(url, name, root_destination='~/data/', zipfile=False,
         old file if possible.
     """
     # Make sure we have directories to dump files
-    home = op.expanduser('~')
-    tmpfile = home + '/tmp/tmp'
-    if not op.isdir(home + '/data/'):
+    data_dir = op.expanduser(root_destination)
+    temp_dir = op.join(data_dir, 'tmp')
+    if not op.isdir(data_dir):
         print('Creating data folder...')
-        os.makedirs(home + '/data/')
+        os.makedirs(data_dir)
 
-    if not op.isdir(home + '/tmp/'):
+    if not op.isdir(temp_dir):
         print('Creating tmp folder...')
-        os.makedirs(home + '/tmp/')
+        os.makedirs(temp_dir)
 
     download_path = _convert_url_to_downloadable(url)
 
     # Now save to the new destination
-    out_path = root_destination.replace('~', home) + name
+    out_path = op.join(data_dir, name)
     if not op.isdir(op.dirname(out_path)):
         print('Creating path {} for output data'.format(out_path))
         os.makedirs(op.dirname(out_path))
 
-    if zipfile is True:
-        _fetch_file(download_path, tmpfile)
-        myzip = ZipFile(tmpfile)
+    if replace is False and op.exists(out_path):
+        print('Replace is False and data exists, so doing nothing. '
+              'Use replace==True to re-download the data.')
+    elif zipfile is True:
+        print('Extracting zip file...')
+        path_temp = op.join(temp_dir, name)
+        _fetch_file(download_path, path_temp)
+        myzip = ZipFile(path_temp)
         myzip.extractall(out_path)
-        os.remove(tmpfile)
+        os.remove(path_temp)
     else:
         if len(name) == 0:
             raise ValueError('Cannot overwrite the root data directory')
-        if replace is False and op.exists(out_path):
-            raise ValueError('Path {} exists, use `replace=True` to '
-                             'overwrite'.format(out_path))
         _fetch_file(download_path, out_path)
-    print('Successfully moved file to {}'.format(out_path))
+        print('Successfully moved file to {}'.format(out_path))
 
 
 def install_package(name=None, url=None, update=True, userdir=True):

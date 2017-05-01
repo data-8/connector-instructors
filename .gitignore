@@ -38,3 +38,9 @@ Thumbs.db
 
 # Python
 *.pyc
+
+# Jupyter #
+###########
+
+.ipynb_checkpoints
+*.egg-info
